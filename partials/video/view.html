@@ -1,0 +1,20 @@
+<div class="container intro" ng-controller="viewvideo">
+    <div class="row">
+
+        <div class="col-sm-8">
+            <div ng-bind-html="TrustDangerousSnippet(data.url)"></div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="row"  ng-repeat="item in last" style="margin-bottom: 10px">
+                <div class="col-sm-5">
+                    <img ng-src="{{item.image}}" style="width: 100%">
+                </div>
+                <div class="col-sm-7">
+                    <a href="/video/{{item.slug}}"><h5>{{item.title}}</h5></a>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</div> <!-- / .container -->

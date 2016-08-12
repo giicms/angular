@@ -1,0 +1,188 @@
+# Virtual Hosts
+#
+# Required modules: mod_log_config
+
+# If you want to maintain multiple domains/hostnames on your
+# machine you can setup VirtualHost containers for them. Most configurations
+# use only name-based virtual hosts so the server doesn't need to worry about
+# IP addresses. This is indicated by the asterisks in the directives below.
+#
+# Please see the documentation at 
+# <URL:http://httpd.apache.org/docs/2.4/vhosts/>
+# for further details before you try to setup virtual hosts.
+#
+# You may use the command line option '-S' to verify your virtual host
+# configuration.
+
+#
+# Use name-based virtual hosting.
+#
+NameVirtualHost *:80
+#
+# VirtualHost example:
+# Almost any Apache directive may go into a VirtualHost container.
+# The first VirtualHost section is used for all requests that do not
+# match a ##ServerName or ##ServerAlias in any <VirtualHost> block.
+#
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host.example.com
+    ##DocumentRoot "G:/xampp/htdocs/dummy-host.example.com"
+    ##ServerName dummy-host.example.com
+    ##ServerAlias www.dummy-host.example.com
+    ##ErrorLog "logs/dummy-host.example.com-error.log"
+    ##CustomLog "logs/dummy-host.example.com-access.log" common
+##</VirtualHost>
+
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    ##DocumentRoot "G:/xampp/htdocs/dummy-host2.example.com"
+    ##ServerName dummy-host2.example.com
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+##</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName giicms.loc
+	DocumentRoot G:/xampp/htdocs/giicms_v2.0/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/giicms_v2.0/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName hoianbesttour.loc
+	DocumentRoot G:/xampp/htdocs/hoianbesttour/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/hoianbesttour/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName api.loc
+	DocumentRoot G:/xampp/htdocs/api/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/api/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName mobile.loc
+	DocumentRoot G:/xampp/htdocs/mobile/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/mobile/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName giaonhanviec.loc
+	DocumentRoot G:/xampp/htdocs/giaonhanviec/frontend/web/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/giaonhanviec/frontend/web/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName backend.giaonhanviec.loc
+	DocumentRoot G:/xampp/htdocs/giaonhanviec/backend/web/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/giaonhanviec/backend/web/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+
+
+
+<VirtualHost *:80>
+	ServerName apksharing.loc
+	DocumentRoot G:/xampp/htdocs/apksharing/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/apksharing/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName html.loc
+	DocumentRoot G:/xampp/htdocs/html/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/html/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+
+<VirtualHost *:80>
+	ServerName viblo.loc
+	DocumentRoot G:/xampp/htdocs/viblo/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/viblo/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName wish.loc
+	DocumentRoot G:/xampp/htdocs/wish/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/wish/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+	ServerName cms.loc
+	DocumentRoot G:/xampp/htdocs/cms/web/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/cms/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName hoianfood.loc
+	DocumentRoot G:/xampp/htdocs/hoianfood/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/hoianfood/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+</VirtualHost>
+
+
+<VirtualHost *:80>
+	ServerName hanoitour.loc
+	DocumentRoot G:/xampp/htdocs/hanoitour/
+	ServerAdmin huynhtuvinh87@gmail.com
+	<Directory "G:/xampp/htdocs/hanoitour/">
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+</VirtualHost>
+
+
+

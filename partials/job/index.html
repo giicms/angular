@@ -1,0 +1,16 @@
+
+<!-- Intro Text -->
+
+<div class="container intro" ng-controller="jobCtrl">
+    <ol class="breadcrumb">
+        <li class="active">Danh sách công việc</li>
+    </ol>
+    <a href="#!/job/create/" class="btn btn-primary" style="float: right">Đăng việc</a>
+    <div class="row"  ng-repeat="item in data">
+        <div class="col-md-12">
+            <h4><a href="#!/job/{{item.id}}">{{item.name}}</a> <br><small>{{item.category.name}}</small></h4>
+            <p ng-bind-html="TrustDangerousSnippet(item.description)"></p>
+        </div>
+    </div>
+
+</div> <!-- / .container -->

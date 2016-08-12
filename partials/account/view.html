@@ -1,0 +1,22 @@
+<div class="container intro" ng-controller="viewCtrl">
+    <ol class="breadcrumb">
+        <li><a href="#!/product">Product</a></li>
+        <li class="active">{{data.title}}</li>
+    </ol>
+    <div class="row">
+        <div ng-if="data.status === 404">
+            <h2>{{data.name}}</h2>
+            <p>{{data.message}}</p>
+        </div>
+        <table class="table" ng-if="data.status === 1">
+            <tr><td>ID</td><td>{{data.id}}</td></tr>
+            <tr><td>Title</td><td>{{data.title}}</td></tr>
+            <tr><td>Price</td><td>{{data.price}}</td></tr>
+            <tr><td>Stock</td><td>{{data.stock}}</td></tr>
+            <tr><td>Packing</td><td>{{data.packing}}</td></tr>
+            <tr><td>Description</td><td>{{data.description}}</td></tr>
+        </table>
+
+    </div> 
+
+</div> <!-- / .container -->

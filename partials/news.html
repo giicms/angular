@@ -1,0 +1,78 @@
+<!-- Wrapper -->
+<div class="wrapper" ng-controller="newsCtrl">
+
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 class="primary-font">{{category.title}}</h3>
+                </div>
+                <div class="col-sm-8">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li ng-show="linksub"><a href="#!/tin-tuc">Tin tức</a></li>
+                        <li class="active">{{category.title}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row blog-p">
+            <div class="col-sm-9">
+
+                <!-- Blog Post #1 -->
+                <div ng-repeat="item in news">
+
+                    <img class="author hidden-xs" src="{{item.thumbnail_images.thumbnail.url}}" alt="{{item.attachments[0].title}}">
+                    <div class="blog-p-body">
+                        <h2 class="primary-font first-child"><a href="#!/tin-tuc-c1/{{item.slug}}">{{item.title}}</a></h2>
+                        <hr>
+                        <p ng-bind-html="TrustDangerousSnippet(item.excerpt)">
+
+                        </p>
+                        <a href="#!/tin-tuc-c1/{{item.slug}}" >Xem tiếp...</a>
+                    </div>
+
+                </div>
+
+
+                <!-- Paggination -->
+                <ul class="pagination pull-right" ng-show="pages">
+                    <li data-ng-repeat="i in pagination" ng-class="{active:isActive('/' + get_url + '/' + i)}">
+                        <a href="#!/{{get_url}}/{{i==1?'':i}}">{{i}}</a>
+                    </li>
+                    <!--                    <li class="disabled"><a href="#">«</a></li>
+                                        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">»</a></li>-->
+                </ul>
+                <!--<div ng-repeat="n in [10]| makeRange">{{n}}</div>-->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="col-sm-3">
+
+
+
+                <ul class="blog-p-social">
+                    <li><a href="#!/tin-tuc/tin-cong-nghe">Tin công nghệ</a></li>
+                    <li><a href="#!/tin-tuc/tin-tuc-su-kien">Tin tức - sự kiện</a></li>
+                    <li><a href="#!/tin-tuc/tin-du-an">Tin dự án</li>
+                </ul>
+
+
+
+            </div>
+        </div> <!-- / .row -->
+
+    </div> <!-- / .container -->
+
+</div> <!-- / .wrapper -->

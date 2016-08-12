@@ -1,0 +1,40 @@
+
+<!-- Intro Text -->
+
+<div class="container intro" ng-controller="accountCtrl">
+    <ol class="breadcrumb">
+        <li class="active">Account</li>
+    </ol>
+    <a href="#!/job" class="btn btn-primary" style="float: right">Create product</a>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <th>Tên</th>
+                    <th>Email</th>
+
+                </tr>
+            </thead>
+            <tr ng-repeat="item in data">
+                <td>{{item.member._id.$id}}</td>
+                <td>{{item.member.name}}</td>
+                <td>{{item.member.email}}</td>
+                <td>
+                    <ul  ng-repeat="sector in item.sectors">
+                        <li>{{sector.sector.name}}<br><small>{{sector.category.name}}</small></li>
+                        <li>{{sector.skills}}</li>
+                    </ul>
+                </td>
+
+            </tr>
+        </table>
+        <ul class ="pagination pull-right" ng-show="pages">
+            <li data-ng-repeat="i in pagination" ng-class="{active:isActive('/' + get_url + '/' + i)}">
+                <a href="#!/product/{{i==1?'':+'page/'+i}}">{{i}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div> <!-- / .container -->

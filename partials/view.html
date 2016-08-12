@@ -1,0 +1,80 @@
+<div id="main" role="main">
+    <div class="container" >
+        <ul class="breadcrumb">
+            <li><a href="/" class="homepage-link">Trang chủ</a></li>
+            <li><span class="page-title">{{cat.cat_name}}</span></li>
+        </ul>
+        <div class="row sidebar_left ">
+            <div class="column_center">
+                <div id="main_content" class="col-sm-9">
+                    <div class="collection-scope">
+                        <div class="page_header">
+                            <h1>{{cat.cat_name}}</h1>
+                        </div>
+                        <div class="page_content">
+                            <div class="product-listing__collection">
+                                <div class="product_listing_main">
+                                    <div class="row" ng-controller="viewProductCtrl">
+                                        <div class="product col-sm-4"  ng-repeat="item in data">
+                                            <div>
+                                                <div class="product_img"> <a href="#!/san-pham/{{item.cat_alias}}/{{item.alias}}"> <img src="{{item.image}}" alt="{{item.title}}" />
+                                                        <div class="sale" ng-if="item.sale != 0">{{item.sale}}%</div>
+                                                    </a> </div>
+                                                <div class="product_info">
+                                                    <div class="product_price">
+                                                        <span class="money">{{item.price_sale}} VND</span>
+                                                        <span class="money compare-at-price" ng-if="item.sale != 0">{{item.price}} VND</span>
+                                                    </div>
+                                                    <div class="product_name"> <a href="#!/san-pham/{{item.cat_alias}}/{{item.alias}}">{{item.title}}</a> </div>
+                                                    <div class="product_desc">{{item.description}} ...</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pagination">
+                                <span class="page" ng-if="page-1!=0"><a href="#!/san-pham/{{cat.alias}}/{{page-1}}">« Previous</a></span>
+                                <span class="next"><a href="#!/san-pham/{{cat.alias}}/{{page+1}}">Next &raquo;</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column_left column col-sm-3">
+
+                <div class="widget widget_best_sellers">
+                    <h3 class="widget_header">Bán tốt nhất</h3>
+                    <div class="widget_content" ng-controller="BestSellerCtrl">
+                        <div class="product_listing_sidebar">
+                            <div class="product" ng-repeat="item in products">
+
+                                <div class="product_img">  
+                                    <a href="#!/san-pham/{{item.cat_alias}}/{{item.alias}}">
+                                        <img src="{{item.image}}" alt="{{item.title}}" />
+                                    </a>
+                                </div>
+
+                                <div class="product_info">
+                                    <div class="product_name">
+                                        <a href="#!/san-pham/{{item.cat_alias}}/{{item.alias}}">{{item.title}}</a>
+                                    </div>
+                                    <div class="product_price">
+                                        <span class="money">{{item.price_sale}} VND</span>
+                                        <span class="money compare-at-price" ng-if="item.sale != 0">{{item.price}} VND</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

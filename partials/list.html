@@ -1,0 +1,24 @@
+
+<!-- Intro Text -->
+<div class="container intro" ng-controller="listCtrl">
+    <div class="row">
+        <table class="table">
+            <tr ng-repeat="item in data">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.stock}}</td>
+                <td>{{item.packing}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.status}}</td>
+            </tr>
+        </table>
+        <ul class="pagination pull-right" ng-show="pages">
+            <li data-ng-repeat="i in pagination" ng-class="{active:isActive('/' + get_url + '/' + i)}">
+                <a href="#!/product/{{i==1?'':+'page/'+i}}">{{i}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div> <!-- / .container -->

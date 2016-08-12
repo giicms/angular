@@ -1,0 +1,34 @@
+
+<div class="container intro" ng-controller="createvideo">
+    <h1>Create</h1>
+    <a href="#!/video" class="btn btn-primary" style="float: right">Video</a>
+    <div class="row">
+        <div class="col-lg-12">
+            <form name="form" novalidate>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="video.title" name="title" required="" />
+                    <div ng-show="form.$submitted || form.title.$touched">
+                        <div ng-show="form.title.$error.required">Tieu de không được rỗng.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Keywords</label>
+                    <input type="text" class="form-control" ng-model="video.keywords" name="keywords" required="" />
+                    <div ng-show="form.$submitted || form.keywords.$touched">
+                        <div ng-show="form.keywords.$error.required">Keywords không được rỗng.</div>
+                    </div>
+                </div>
+                <div class="form-group">   
+                    <label>Description</label>
+                    <textarea class="form-control" ng-model="video.description" name="description" required="" ></textarea>
+                    <div ng-show="form.$submitted || form.description.$touched">
+                        <span ng-show="form.description.$error.required">Mô tả không được rỗng.</span>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary" ng-click="create(video)" value="Save" />
+            </form>
+ 
+        </div>
+    </div>
+</div>

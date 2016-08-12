@@ -1,0 +1,61 @@
+<!-- Wrapper -->
+<div class="wrapper" ng-controller="newsDetailCtrl">
+
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                </div>
+                <div class="col-sm-8">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li class="active">{{news.categories[0].title}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row blog-p">
+            <div class="col-sm-9">
+
+                <!-- Blog Post #1 -->
+
+
+                <img class="author hidden-xs" src="{{news.thumbnail_images.thumbnail.url}}" alt="{{news.title}}">
+                <div class="blog-p-body">
+                    <h2 class="primary-font first-child">{{news.title}}</h2>
+                    <hr>
+                    <p ng-bind-html="TrustDangerousSnippet(news.content)">
+
+                    </p>
+
+                </div>
+
+
+
+
+                <div class="clearfix"></div>
+
+            </div>
+            <div class="col-sm-3">
+
+
+
+                <ul class="blog-p-social">
+                    <li><a href="#!/tin-tuc/tin-cong-nghe">Tin công nghệ</a></li>
+                    <li><a href="#!/tin-tuc/tin-tuc-su-kien">Tin tức - sự kiện</a></li>
+                    <li><a href="#!/tin-tuc/tin-du-an">Tin dự án</li>
+                </ul>
+
+
+
+            </div>
+        </div> <!-- / .row -->
+
+    </div> <!-- / .container -->
+
+</div> <!-- / .wrapper -->

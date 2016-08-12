@@ -1,0 +1,39 @@
+
+<!-- Intro Text -->
+
+<div class="container intro" ng-controller="listCtrl">
+    <ol class="breadcrumb">
+        <li class="active">Product</li>
+    </ol>
+    <a href="#!/post/create" class="btn btn-primary" style="float: right">Create product</a>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                  
+                </tr>
+            </thead>
+            <tr ng-repeat="item in data">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.description}}</td>
+                <td><a href="javascript:void(0)" ng-click="changeActive(item.id)" class="status_{{item.id}}">{{item.status==1?'Yes':'No'}}</a></td>
+                <td>
+                    <a href="#!/post/view/{{item.id}}">View</a>
+                    <a href="#!/post/update/{{item.id}}">Update</a>
+                    <a href="javascript:void(0)" ng-click="delete(item.id)"> Delete </a>
+                </td >
+            </tr>
+        </table>
+        <ul class ="pagination pull-right" ng-show="pages">
+            <li data-ng-repeat="i in pagination" ng-class="{active:isActive('/' + get_url + '/' + i)}">
+                <a href="#!/product/{{i==1?'':+'page/'+i}}">{{i}}</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div> <!-- / .container -->

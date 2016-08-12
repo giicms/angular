@@ -1,0 +1,18 @@
+
+<!-- Intro Text -->
+
+
+<div class="container intro"  ng-controller="searchvideo">
+    <div class="row">
+        <div class="col-lg-3"  ng-repeat="item in items">
+            <img ng-src="{{item.image}}" style="width: 100%">
+            <a ng-href="#!video/{{item.slug}}"><h5 style="min-height: 70px">{{item.title}}</h5></a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <button class="btn btn-primary text-center" ng-hide="count < limit" ng-click="show(page + 2)">show more...</button>
+        </div>
+    </div>
+</div>

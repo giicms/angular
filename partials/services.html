@@ -1,0 +1,52 @@
+<!-- Wrapper -->
+<div class="wrapper" ng-controller="servicesCtrl">
+
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 class="primary-font">{{category.title}}</h3>
+                </div>
+                <div class="col-sm-8">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li class="active">{{category.title}}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="headline first-child text-color">
+                    <span class="border-color">{{category.title}}</span>
+                </h2>
+<!--                <p class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet pretium elit non lacinia. Integer in consequat metus. Curabitur dapibus velit sed scelerisque fermentum. Proin interdum purus nec pharetra semper. 
+                </p>-->
+            </div>
+        </div> <!-- / .row -->
+        <!-- Our Services -->
+        <div class="row services-p">
+            <div class="col-sm-6" ng-repeat="item in services">
+                <div class="services-item">
+                    <i class="fa fa-gear fa-2x text-color"></i>
+                    <div class="services-item-desc">
+                        <h3 class="primary-font">{{item.title}}</h3>
+                        <p class="text-muted"  ng-bind-html="TrustDangerousSnippet(item.content)">
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- / .row -->
+
+
+
+
+    </div> <!-- / .container -->
+
+</div> <!-- / .wrapper -->

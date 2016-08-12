@@ -1,0 +1,56 @@
+
+<!-- Wrapper -->
+<div class="wrapper"  ng-controller="aboutCtrl as _">
+
+    <!-- Topic Header -->
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3 class="primary-font"  dynamic="title"></h3>
+                </div>
+                <div class="col-sm-8">
+                    <ol class="breadcrumb pull-right hidden-xs">
+                        <li><a href="#!/">Trang chủ</a></li>
+                        <li class="active"  dynamic="title"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row about-us-p">
+            <div class="col-sm-7" ng-controller="aboutCtrl as _">
+
+<!--                <div ng-repeat="item in data">
+                    <a href="#!/page/{{item.slug}}">
+                        {{item.title}}
+                    </a>
+                    <div ng-bind-html="TrustDangerousSnippet(item.content)">
+
+                    </div>
+                </div>-->
+                <h2 class="headline first-child text-color">
+                    <span class="border-color" dynamic="title"></span>
+                </h2>
+                <div dynamic="content"></div>
+                <hr>
+                <a href="#!/lien-he" class="btn btn-lg btn-color">Liên hệ</a>
+                <br /><br />
+            </div>
+            <div class="col-sm-5">
+                <h2 class="headline first-child text-color">
+                    <span class="border-color">Video Intro</span>
+                </h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="//player.vimeo.com/video/67449472" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div> <!-- / .row -->
+        
+
+    </div> <!-- / .container -->
+
+</div> <!-- / .wrapper -->

@@ -1,0 +1,63 @@
+
+<div class="container intro" ng-controller="createJobCtrl">
+    <ol class="breadcrumb">
+        <li><a href="#!/job">Job</a></li>
+        <li class="active">Create</li>
+    </ol>
+    <h1>Create</h1>
+    <div class="alert alert-success" role="alert" ng-show="success">
+        Well done! You successfully read this important alert message.
+    </div>
+    <p>Please fill out the following fields to create:</p>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <!--            <form ng-submit="create()" name="jobForm" novalidate class="form-horizontal">
+                            <div class="form-group" ng-class="{ 'has-error' : jobForm.name.$invalid && !jobForm.name.$pristine }">
+                                <input type="text" name="name" ng-model="job.name" required class="form-control">
+                                <span ng-show="jobForm.name.$dirty && jobForm.name.$invalid || jobForm.$submitted">
+                                    <span class="help-block help-block-error" ng-show="jobForm.name.$error.required">Tiêu đề không được rỗng.</span>
+                                </span>
+                                                    <p class="help-block help-error"  ng-messages="jobForm.name.$error" ng-if="jobForm.name.$touched">
+                                                        <span ng-message="required">Tên công việc không được rỗng.</span>
+                                                    </p>
+                            </div>
+            
+                            <div class="form-group" ng-class="{ 'has-error' : jobForm.description.$invalid && !jobForm.description.$pristine }">
+                                <input type="text" name="description" ng-model="job.description" required  class="form-control">
+                                <span ng-show="jobForm.description.$dirty && jobForm.description.$invalid">
+                                    <span class="help-block help-block-error" ng-show="jobForm.description.$error.required">Mô tả không được rỗng.</span>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" ng-disabled="jobForm.name.$dirty && jobForm.name.$invalid || jobForm.description.$dirty && jobForm.description.$invalid">
+                            </div>
+            
+                        </form>-->
+            <form name="form" class="css-form" novalidate>
+                Name:
+                <input type="text" ng-model="job.name" name="name" required="" />
+                <br />
+                <div ng-show="form.$submitted || form.name.$touched">
+                    <div ng-show="form.name.$error.required">Tên công việc không được rỗng.</div>
+                </div>
+
+                E-mail:
+                <input type="text" ng-model="job.description" name="description" required="" />
+                <br />
+                <div ng-show="form.$submitted || form.description.$touched">
+                    <span ng-show="form.description.$error.required">Mô tả không được rỗng.</span>
+                </div>
+
+                <input type="button" ng-click="reset(form)" value="Reset" />
+                <input type="submit" ng-click="create(job)" value="Save" />
+            </form>
+            <pre>job = {{job| json}}</pre>
+            <pre>master = {{master| json}}</pre>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row">
+
+</div>

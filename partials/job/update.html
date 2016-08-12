@@ -1,0 +1,58 @@
+
+<div class="container intro" ng-controller="updateCtrl">
+    <ol class="breadcrumb">
+        <li><a href="#!/product">Product</a></li>
+        <li class="active">Update</li>
+    </ol>
+    <h1>Update</h1>
+    <div class="alert alert-success" role="alert" ng-show="success">
+        Well done! You successfully read this important alert message.
+    </div>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <form ng-submit="update()" name="updateForm" id="create-form" method="post" role="form" >
+                <div ng-class="{ 'has-success': !error['title'] && submitted,
+                'has-error': error['title'] && submitted }"
+                     class="form-group required">
+                    <label class="control-label" for="title">Title</label>
+                    <input data-ng-model="updateProduct.title" type="text" id="title" class="form-control" value="{{title}}">
+                    <p class="help-block help-block-error">{{ error['title']}}</p>
+                </div>
+                <div ng-class="{ 'has-success': !error['price'] && submitted,
+                'has-error': error['price'] && submitted }"
+                     class="form-group required">
+                    <label class="control-label" for="price">Price</label>
+                    <input ng-model="updateProduct.price" type="text" id="price" class="form-control" value="{{price}}">
+                    <p class="help-block help-block-error">{{ error['price']}}</p>
+                </div>
+                <div ng-class="{ 'has-success': !error['stock'] && submitted,
+                'has-error': error['stock'] && submitted }"
+                     class="form-group required">
+                    <label class="control-label" for="stock">Stock</label>
+                    <input ng-model="updateProduct.stock" type="text" id="stock" class="form-control" value="{{stock}}">
+                    <p class="help-block help-block-error">{{ error['stock']}}</p>
+                </div>
+
+                <div ng-class="{ 'has-success': !error['packing'] && submitted,
+                'has-error': error['packing'] && submitted }"
+                     class="form-group required">
+                    <label class="control-label" for="packing">Packing</label>
+                    <input ng-model="updateProduct.packing" type="text" id="packing" class="form-control" value="{{packing}}">
+                    <p class="help-block help-block-error">{{ error['packing']}}</p>
+                </div>
+                <div ng-class="{ 'has-success': !error['description'] && submitted,
+                'has-error': error['description'] && submitted }"
+                     class="form-group required">
+                    <label class="control-label" for="description">Description</label>
+                    <textarea  ng-model="updateProduct.description" type="text" id="description" class="form-control">{{description}}</textarea>
+                    <p class="help-block help-block-error">{{ error['description']}}</p>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" name="update-button">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
